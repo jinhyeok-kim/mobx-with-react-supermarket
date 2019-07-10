@@ -30,7 +30,7 @@ export default class MarketStore {
     get total() {
         console.log('총합 계산...');
         return this.selectedItems.reduce((previous, current) => {
-            return previous + current.previous * current.count;
+            return previous + current.price * current.count;
         }, 0);
     }
 
