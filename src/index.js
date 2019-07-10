@@ -6,13 +6,12 @@ import App from './App';
 import * as serviceWorker from './serviceWorker';
 import CounterStore from './stores/counter';
 import MarketStore from './stores/market'
+import RootStore from './stores';
 
-const counter = new CounterStore(); // 스토어 인스턴스를 만들고
-const market = new MarketStore();
+const root = new RootStore();
 
 ReactDOM.render(
-    <Provider counter={counter} market={market}>
-      {/* Provider 에 props 로 넣어줍니다. */}
+    <Provider {...root}>
       <App />
     </Provider>,
     document.getElementById('root')
